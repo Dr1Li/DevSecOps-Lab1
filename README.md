@@ -17,10 +17,10 @@ A complete DevOps implementation featuring a Python Flask API for arithmetic ope
 
 ### DevOps Pipeline
 - 🐳 **Docker containerization** with multi-stage builds
-- 📊 **Automated monitoring** for file changes
+- 📊 **Automated monitoring** for local file changes
 - 🔄 **Git repository monitoring** for new commits
 - 🚀 **Automatic rebuild and deployment**
-- 🐙 **Docker Hub integration**
+- 🐙 **Docker Hub integration** (manual push)
 - 📝 **Comprehensive logging**
 
 ## 📁 Project Structure
@@ -82,10 +82,10 @@ chmod +x deploy.sh
 ./deploy.sh monitor
 
 # Manual operations
-./deploy.sh build    # Build Docker image
-./deploy.sh deploy   # Deploy container
-./deploy.sh stop     # Stop container
-./deploy.sh push     # Push to Docker Hub
+./deploy.sh build      # Build Docker image
+./deploy.sh deploy     # Deploy container
+./deploy.sh git-test   # Test git monitoring functionality
+./deploy.sh stop       # Stop container
 ```
 
 ## 📋 API Documentation
@@ -120,15 +120,23 @@ curl -X POST http://localhost:5000/divide \
 
 ## 🐳 Docker Hub Integration
 
-### Setup Docker Hub credentials:
+### Manual Push to Docker Hub:
 ```bash
-export DOCKER_HUB_USERNAME="your-username"
-export DOCKER_HUB_PASSWORD="your-password"
+# Login to Docker Hub
+docker login
+
+# Tag your image
+docker tag arithmetic-api YOUR_DOCKERHUB_USERNAME/arithmetic-api:latest
+
+# Push to Docker Hub
+docker push YOUR_DOCKERHUB_USERNAME/arithmetic-api:latest
 ```
 
-### Push to Docker Hub:
+### Example with username 'dr1li':
 ```bash
-./deploy.sh push
+docker login
+docker tag arithmetic-api dr1li/arithmetic-api:latest
+docker push dr1li/arithmetic-api:latest
 ```
 
 ## 🔧 Development
@@ -141,10 +149,6 @@ pip install -r requirements.txt
 # Run the application
 python app.py
 ```
-
-### Environment Variables:
-- `DOCKER_HUB_USERNAME`: Your Docker Hub username
-- `DOCKER_HUB_PASSWORD`: Your Docker Hub password
 
 ## 📊 Monitoring Features
 
@@ -207,4 +211,3 @@ If you encounter any issues:
 **Author**: LAMGHARI Noureddine  
 **Course**: DevSecOps  
 **Date**: 07 October 2025
-
