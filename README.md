@@ -204,7 +204,7 @@ If you encounter any issues:
 
 ---
 
-**Author**: [Your Name]  
-**Course**: [Course Name]  
-**Date**: October 2025
-# Remote test Tue Oct  7 05:54:01 AM EDT 2025
+**Author**: LAMGHARI Noureddine  
+**Course**: DevSecOps  
+**Date**: 07 October 2025
+
