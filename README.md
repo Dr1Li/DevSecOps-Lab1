@@ -5,6 +5,9 @@
 ![Flask](https://img.shields.io/badge/flask-3.0.0-green.svg)
 
 A complete DevOps implementation featuring a Python Flask API for arithmetic operations with Docker containerization, automated monitoring, and CI/CD pipeline.
+**Author**: LAMGHARI Noureddine  
+**Course**: DevSecOps  
+**Date**: 07 October 2025
 
 ## 🚀 Features
 
@@ -207,7 +210,3 @@ If you encounter any issues:
 4. Review deployment logs from `./deploy.sh monitor`
 
 ---
-
-**Author**: LAMGHARI Noureddine  
-**Course**: DevSecOps  
-**Date**: 07 October 2025
